@@ -1,5 +1,7 @@
 require "byebug"
+require "faker"
 require "rspec"
+require "rspec/matchers/fail_matchers"
 require "simplecov"
 
 SimpleCov.start do
@@ -19,10 +21,6 @@ RSpec.configure do |config|
   # allow "fit" examples
   config.filter_run_when_matching :focus
 
-  config.mock_with :rspec do |mocks|
-    # verify existence of stubbed methods
-    mocks.verify_partial_doubles = true
-  end
+  # expect { ... }.to fail
+  config.include RSpec::Matchers::FailMatchers
 end
-
-# Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
