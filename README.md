@@ -1,5 +1,7 @@
 rspec-uuid
 ======
+An RSpec matcher for UUIDs.
+
 ```ruby
 require "rspec-uuid"
 
