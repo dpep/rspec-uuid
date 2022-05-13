@@ -1,0 +1,17 @@
+# EditorConfig: http://EditorConfig.org
+# Download your editor's plugin:
+#   http://editorconfig.org/#download
+
+
+[*]
+charset = utf-8
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+indent_size = 2
+
+
+[{Makefile,**.mk}]
+# Makefiles require tabs
+indent_style = tab
