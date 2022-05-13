@@ -1,10 +1,10 @@
-MY_NEW_GEM
+rspec-uuid
 ======
-...
-
-
 ```ruby
-require "MY_NEW_GEM"
+require "rspec-uuid"
+
+
+expect(thing).to be_a_uuid
 ```
 
 
@@ -22,5 +22,5 @@ Yes please  :)
 
 
 ----
-![Gem](https://img.shields.io/gem/dt/MY_NEW_GEM?style=plastic)
-[![codecov](https://codecov.io/gh/dpep/MY_NEW_GEM_rb/branch/main/graph/badge.svg)](https://codecov.io/gh/dpep/MY_NEW_GEM_rb)
+![Gem](https://img.shields.io/gem/dt/rspec-uuid?style=plastic)
+[![codecov](https://codecov.io/gh/dpep/rspec-uuid/branch/main/graph/badge.svg)](https://codecov.io/gh/dpep/rspec-uuid)
