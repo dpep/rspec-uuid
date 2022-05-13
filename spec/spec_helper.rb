@@ -1,6 +1,7 @@
 require "active_support"
 require "active_support/core_ext/digest/uuid"
 require "byebug"
+require "faker"
 require "rspec"
 require "rspec/matchers/fail_matchers"
 require "simplecov"

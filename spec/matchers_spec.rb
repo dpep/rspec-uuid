@@ -8,6 +8,7 @@ describe RSpecUUID::Matchers do
   context "with generated UUIDs" do
     specify do
       100.times { expect(SecureRandom.uuid).to be_a_uuid }
+      100.times { expect(Faker::Internet.uuid).to be_a_uuid }
     end
   end
 
