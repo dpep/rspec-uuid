@@ -1,3 +1,8 @@
+###  v0.2.1  (2022-05-16)
+- requirements
+- faker coverage
+- Update README.md
+
 ###  v0.2.0  (2022-05-13)
 - uuid version support
 - Update README.md
