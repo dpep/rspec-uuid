@@ -47,7 +47,7 @@ describe RSpecUUID::Matchers do
     it "fails with a useful message" do
       expect {
         expect(uuid_v3).to be_a_uuid(4)
-      }.to fail_including("UUID v4, found a UUID v3")
+      }.to fail_including("expected a UUID v4, found a UUID v3")
     end
   end
 end
