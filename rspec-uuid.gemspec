@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.test_files  = Dir.glob("spec/**/*_spec.rb")
 
   s.add_dependency "rspec"
-  s.add_dependency "rspec-expectations"
 
   s.add_development_dependency "activesupport"
   s.add_development_dependency "byebug"
