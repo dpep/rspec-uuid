@@ -1,3 +1,6 @@
+###  v0.3.0  (2022-05-19)
+- version kwarg
+
 ###  v0.2.1  (2022-05-16)
 - requirements
 - faker coverage
