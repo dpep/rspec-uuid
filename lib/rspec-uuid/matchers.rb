@@ -1,7 +1,7 @@
 module RSpecUUID
   module Matchers
     class UUIDMatcher
-      def initialize(version = nil)
+      def initialize(version: nil)
         @version = version
       end
 

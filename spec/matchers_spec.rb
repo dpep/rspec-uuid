@@ -37,16 +37,16 @@ describe RSpecUUID::Matchers do
     let(:uuid_v4) { SecureRandom.uuid }
     let(:uuid_v5) { Digest::UUID.uuid_v5(namespace, "123") }
 
-    specify { expect(uuid_v3).to be_a_uuid(3) }
-    specify { expect(uuid_v3).not_to be_a_uuid(4) }
-    specify { expect(uuid_v3).not_to be_a_uuid(5) }
+    specify { expect(uuid_v3).to be_a_uuid(version: 3) }
+    specify { expect(uuid_v3).not_to be_a_uuid(version: 4) }
+    specify { expect(uuid_v3).not_to be_a_uuid(version: 5) }
 
-    specify { expect(uuid_v4).to be_a_uuid(4) }
-    specify { expect(uuid_v5).to be_a_uuid(5) }
+    specify { expect(uuid_v4).to be_a_uuid(version: 4) }
+    specify { expect(uuid_v5).to be_a_uuid(version: 5) }
 
     it "fails with a useful message" do
       expect {
-        expect(uuid_v3).to be_a_uuid(4)
+        expect(uuid_v3).to be_a_uuid(version: 4)
       }.to fail_including("expected a UUID v4, found a UUID v3")
     end
   end
