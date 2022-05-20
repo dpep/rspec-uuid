@@ -10,8 +10,8 @@ An RSpec matcher for UUIDs.
 require "rspec-uuid"
 
 
-expect(thing).to be_a_uuid
-expect(thing).to be_a_uuid(version: 4)
+it { is_expected.to be_a_uuid }
+it { is_expected.to be_a_uuid(version: 4) }
 ```
 
 
