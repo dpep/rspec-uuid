@@ -1,5 +1,9 @@
 rspec-uuid
 ======
+![Gem](https://img.shields.io/gem/dt/rspec-uuid?style=plastic)
+[![codecov](https://codecov.io/gh/dpep/rspec-uuid/branch/main/graph/badge.svg)](https://codecov.io/gh/dpep/rspec-uuid)
+
+
 An RSpec matcher for UUIDs.
 
 ```ruby
@@ -7,6 +11,7 @@ require "rspec-uuid"
 
 
 expect(thing).to be_a_uuid
+expect(thing).to be_a_uuid(version: 4)
 ```
 
 
@@ -21,8 +26,3 @@ Yes please  :)
 1. Commit your changes (`git commit -am 'awesome new feature'`)
 1. Push your branch (`git push origin my-feature`)
 1. Create a Pull Request
-
-
-----
-![Gem](https://img.shields.io/gem/dt/rspec-uuid?style=plastic)
-[![codecov](https://codecov.io/gh/dpep/rspec-uuid/branch/main/graph/badge.svg)](https://codecov.io/gh/dpep/rspec-uuid)
