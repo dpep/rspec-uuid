@@ -1,3 +1,7 @@
+###  v0.4.0  (2022-05-23)
+- rspec 3
+- Update README.md
+
 ###  v0.3.0  (2022-05-19)
 - version kwarg
 
