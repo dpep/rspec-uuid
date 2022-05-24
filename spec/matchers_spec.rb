@@ -1,4 +1,4 @@
-describe RSpecUUID::Matchers do
+describe "be_a_uuid" do
   context "with a valid UUID" do
     let(:uuid) { "992c94bd-5870-4e02-ad2d-a9435f7fffe6" }
 
@@ -49,5 +49,22 @@ describe RSpecUUID::Matchers do
         expect(uuid_v3).to be_a_uuid(version: 4)
       }.to fail_including("expected a UUID v4, found a UUID v3")
     end
+  end
+
+  it "is composable" do
+    data = {
+      res: {
+        abc: { a: 1 },
+        uuid: SecureRandom.uuid,
+        uuid_v5: Digest::UUID.uuid_v5(Digest::UUID::OID_NAMESPACE, "123"),
+      },
+      foo: nil,
+    }
+
+    expect(data).to include(res: {
+      abc: a_hash_including(:a),
+      uuid: a_uuid,
+      uuid_v5: a_uuid(version: 5),
+    })
   end
 end
