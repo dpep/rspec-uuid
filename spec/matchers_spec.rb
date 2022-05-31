@@ -53,18 +53,17 @@ describe "be_a_uuid" do
 
   it "is composable" do
     data = {
-      res: {
-        abc: { a: 1 },
-        uuid: SecureRandom.uuid,
-        uuid_v5: Digest::UUID.uuid_v5(Digest::UUID::OID_NAMESPACE, "123"),
-      },
-      foo: nil,
+      abc: { a: 1 },
+      uuid: SecureRandom.uuid,
+      uuid_v5: Digest::UUID.uuid_v5(Digest::UUID::OID_NAMESPACE, "123"),
     }
 
-    expect(data).to include(res: {
+    expect(data).to include(uuid: a_uuid)
+
+    expect(data).to match(
       abc: a_hash_including(:a),
       uuid: a_uuid,
       uuid_v5: a_uuid(version: 5),
-    })
+    )
   end
 end
