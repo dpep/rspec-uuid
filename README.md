@@ -11,7 +11,12 @@ require "rspec-uuid"
 
 
 it { is_expected.to be_a_uuid }
+
+# check the version
 it { is_expected.to be_a_uuid(version: 4) }
+
+# compose with other matchers
+it { expect(data).to include(uuid: a_uuid) }
 ```
 
 
