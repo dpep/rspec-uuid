@@ -49,6 +49,25 @@ describe "be_a_uuid" do
         expect(uuid_v3).to be_a_uuid(version: 4)
       }.to fail_including("expected a UUID v4, found a UUID v3")
     end
+
+    describe ".of_version" do
+      it { expect(uuid_v3).to be_a_uuid.of_version(3) }
+
+      it { expect(uuid_v4).to be_a_uuid.of_version(4) }
+      it { expect(uuid_v4).not_to be_a_uuid.of_version(3) }
+
+      it "requires a version argument" do
+        expect {
+          expect(uuid_v4).to be_a_uuid.of_version
+        }.to raise_error(ArgumentError)
+      end
+
+      it "can not be used simultaneously with kwarg version" do
+        expect {
+          expect(uuid_v4).to be_a_uuid(version: 4).of_version(4)
+        }.to raise_error(ArgumentError)
+      end
+    end
   end
 
   it "is composable" do

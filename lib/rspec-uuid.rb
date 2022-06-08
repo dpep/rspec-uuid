@@ -2,12 +2,15 @@ require "rspec/expectations"
 
 RSpec::Matchers.define :be_a_uuid do |version: nil|
   match do |actual|
+    raise ArgumentError if @version && version
+
     return false unless actual.is_a?(String)
 
     # https://www.uuidtools.com/what-is-uuid
     matches = actual.match /^\h{8}-\h{4}-(\h{4})-\h{4}-\h{12}$/
     return false unless matches
 
+    version ||= @version
     if version
       # 1st nibble of 3rd section
       @actual_version = matches[1].to_i(16) >> 12
@@ -16,6 +19,10 @@ RSpec::Matchers.define :be_a_uuid do |version: nil|
     else
       true
     end
+  end
+
+  chain :of_version do |version|
+    @version = version
   end
 
   description do
