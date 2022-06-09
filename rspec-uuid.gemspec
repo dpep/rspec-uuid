@@ -1,7 +1,7 @@
 package_name = File.basename(__FILE__).split(".")[0]
-require File.expand_path("lib/#{package_name}/version", __dir__)
+load Dir.glob("lib/**/version.rb")[0]
 
-package = RSpecUUID
+package = RSpec::UUID
 
 
 Gem::Specification.new do |s|
