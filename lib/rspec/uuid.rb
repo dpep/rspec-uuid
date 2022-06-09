@@ -1,6 +1,10 @@
 require "rspec/expectations"
 
 RSpec::Matchers.define :be_a_uuid do |version: nil|
+  chain :of_version do |version|
+    @version = version
+  end
+
   match do |actual|
     raise ArgumentError if @version && version
 
@@ -19,10 +23,6 @@ RSpec::Matchers.define :be_a_uuid do |version: nil|
     else
       true
     end
-  end
-
-  chain :of_version do |version|
-    @version = version
   end
 
   description do
