@@ -1,3 +1,9 @@
+###  v0.5.0  (2022-06-08)
+- move to "rspec/uuid"
+- .of_version chain
+- Update README.md
+- simplify composition spec
+
 ###  v0.4.0  (2022-05-23)
 - rspec 3
 - Update README.md
