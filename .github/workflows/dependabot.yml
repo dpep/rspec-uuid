@@ -1,0 +1,32 @@
+name: Dependabot automations
+on: pull_request
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    env:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    steps:
+      - uses: actions/checkout@v3
+      - name: checkout PR branch
+        # set upstream for other gh commands
+        run: gh pr checkout ${{github.event.pull_request.number}}
+      - name: Fetch PR metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1
+      - name: Approve PR
+        if: steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: |
+          if [ "$(gh pr status --json reviewDecision -q .currentBranch.reviewDecision)" != "APPROVED" ]; then
+            gh pr review --approve
+          else
+            echo "PR already approved"
+          fi
+      - name: Enable auto-merge
+        if: steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: gh pr merge --auto --squash
+
+permissions:
+  contents: write
+  pull-requests: write
