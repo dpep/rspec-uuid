@@ -36,6 +36,7 @@ describe "be_a_uuid" do
     let(:uuid_v3) { Digest::UUID.uuid_v3(namespace, "123") }
     let(:uuid_v4) { SecureRandom.uuid }
     let(:uuid_v5) { Digest::UUID.uuid_v5(namespace, "123") }
+    let(:uuid_v7) { UUID7.generate }
 
     specify { expect(uuid_v3).to be_a_uuid(version: 3) }
     specify { expect(uuid_v3).not_to be_a_uuid(version: 4) }
@@ -43,6 +44,7 @@ describe "be_a_uuid" do
 
     specify { expect(uuid_v4).to be_a_uuid(version: 4) }
     specify { expect(uuid_v5).to be_a_uuid(version: 5) }
+    specify { expect(uuid_v7).to be_a_uuid(version: 7) }
 
     it "fails with a useful message" do
       expect {

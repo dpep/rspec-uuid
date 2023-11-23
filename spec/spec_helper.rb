@@ -5,6 +5,7 @@ require "faker"
 require "rspec"
 require "rspec/matchers/fail_matchers"
 require "simplecov"
+require "uuid7"
 
 SimpleCov.start do
   add_filter "spec/"
