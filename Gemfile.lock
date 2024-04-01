@@ -26,9 +26,9 @@ GEM
     docile (1.4.0)
     drb (2.2.0)
       ruby2_keywords
-    faker (3.2.3)
+    faker (3.3.0)
       i18n (>= 1.8.11, < 2)
-    i18n (1.14.1)
+    i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     minitest (5.22.2)
     mutex_m (0.2.0)
