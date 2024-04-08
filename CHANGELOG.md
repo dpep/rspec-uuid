@@ -1,3 +1,11 @@
+###  v0.6.0  (2024-04-08)
+- drop ruby 2.7
+- dependabot upgrades
+- uuid_v7
+- gemspec fixup
+- codecov upgrade (#1)
+- add lockfile and dependabot
+
 ###  v0.5.0  (2022-06-08)
 - move to "rspec/uuid"
 - .of_version chain
