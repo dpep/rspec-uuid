@@ -5,6 +5,12 @@ describe "be_a_uuid" do
     specify { expect(uuid).to be_a_uuid }
   end
 
+  context "with nil UUID" do
+    subject(:uuid) { "00000000-0000-0000-0000-000000000000" }
+
+    it { is_expected.to be_a_uuid }
+  end
+
   context "with generated UUIDs" do
     specify do
       100.times { expect(SecureRandom.uuid).to be_a_uuid }
