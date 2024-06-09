@@ -1,12 +1,12 @@
 describe "be_a_uuid" do
   context "with a valid UUID" do
-    let(:uuid) { "992c94bd-5870-4e02-ad2d-a9435f7fffe6" }
+    subject { "992c94bd-5870-4e02-ad2d-a9435f7fffe6" }
 
-    specify { expect(uuid).to be_a_uuid }
+    it { is_expected.to be_a_uuid }
   end
 
   context "with nil UUID" do
-    subject(:uuid) { "00000000-0000-0000-0000-000000000000" }
+    subject { "00000000-0000-0000-0000-000000000000" }
 
     it { is_expected.to be_a_uuid }
   end
