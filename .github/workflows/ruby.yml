@@ -4,7 +4,6 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    types: [ opened, edited, synchronize ]
 
 jobs:
   test:
@@ -29,3 +28,5 @@ jobs:
         run: bundle exec rspec
       - name: upload code coverage
         uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
