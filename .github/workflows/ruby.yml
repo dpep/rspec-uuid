@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: clone ${{ github.repository }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: setup Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
