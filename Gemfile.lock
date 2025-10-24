@@ -81,9 +81,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uri (1.0.4)
-    uuid7 (0.2.0)
-      zeitwerk (~> 2.4)
-    zeitwerk (2.7.3)
 
 PLATFORMS
   ruby
@@ -95,7 +92,6 @@ DEPENDENCIES
   rspec
   rspec-uuid!
   simplecov
-  uuid7
 
 BUNDLED WITH
    2.5.11

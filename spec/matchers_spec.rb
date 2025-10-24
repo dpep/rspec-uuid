@@ -42,7 +42,7 @@ describe "be_a_uuid" do
     let(:uuid_v3) { Digest::UUID.uuid_v3(namespace, "123") }
     let(:uuid_v4) { SecureRandom.uuid }
     let(:uuid_v5) { Digest::UUID.uuid_v5(namespace, "123") }
-    let(:uuid_v7) { UUID7.generate }
+    let(:uuid_v7) { SecureRandom.uuid_v7 }
 
     specify { expect(uuid_v3).to be_a_uuid(version: 3) }
     specify { expect(uuid_v3).not_to be_a_uuid(version: 4) }
