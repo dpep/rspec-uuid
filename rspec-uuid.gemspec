@@ -20,6 +20,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "debug"
   s.add_development_dependency "faker"
   s.add_development_dependency "rspec"
-  s.add_development_dependency "securerandom", ">= 0.3" if RUBY_VERSION < "3.3"
   s.add_development_dependency "simplecov"
 end

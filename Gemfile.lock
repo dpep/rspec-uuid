@@ -91,7 +91,6 @@ DEPENDENCIES
   faker
   rspec
   rspec-uuid!
-  securerandom (>= 0.3)
   simplecov
 
 BUNDLED WITH
