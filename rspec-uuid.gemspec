@@ -1,16 +1,14 @@
 require_relative "lib/rspec/uuid/version"
-package = RSpec::UUID
-package_name = "rspec-uuid"
 
 Gem::Specification.new do |s|
   s.authors     = ["Daniel Pepper"]
   s.description = "RSpec UUID matcher"
   s.files       = `git ls-files * ':!:spec'`.split("\n")
-  s.homepage    = "https://github.com/dpep/#{package_name}"
+  s.homepage    = "https://github.com/dpep/rspec-uuid"
   s.license     = "MIT"
-  s.name        = package_name
-  s.summary     = package.to_s
-  s.version     = package.const_get "VERSION"
+  s.name        = "rspec-uuid"
+  s.summary     = "RSpec::UUID"
+  s.version     = RSpec::UUID::VERSION
 
   s.required_ruby_version = ">= 3.3"
 
