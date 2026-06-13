@@ -24,6 +24,10 @@ describe "be_a_uuid" do
     specify { expect(123).not_to be_a_uuid }
     specify { expect(nil).not_to be_a_uuid }
 
+    specify "with extra lines" do
+      expect("#{SecureRandom.uuid}\nnot-a-uuid").not_to be_a_uuid
+    end
+
     it "fails with a useful message" do
       expect {
         expect(nil).to be_a_uuid
