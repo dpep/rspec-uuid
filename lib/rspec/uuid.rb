@@ -11,7 +11,7 @@ RSpec::Matchers.define :be_a_uuid do |version: nil|
     return false unless actual.is_a?(String)
 
     # https://www.uuidtools.com/what-is-uuid
-    matches = actual.match /^\h{8}-\h{4}-(\h{4})-\h{4}-\h{12}$/
+    matches = actual.match /\A\h{8}-\h{4}-(\h{4})-\h{4}-\h{12}\z/
     return false unless matches
 
     version ||= @version
