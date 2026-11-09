@@ -89,7 +89,7 @@ DEPENDENCIES
   faker
   rspec
   rspec-uuid!
-  simplecov
+  simplecov (>= 1)
 
 BUNDLED WITH
   4.0.9
